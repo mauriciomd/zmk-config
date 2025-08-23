@@ -68,9 +68,9 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB       &kp Q  &kp W  &kp E       &kp R                      &kp T    &kp Y  &kp U                        &kp I                      &kp O                    &kp P                    &kp BSPC
-&kp CAPSLOCK  &kp A  &kp S  &kp D       &kp F                      &kp G    &kp H  &homerow_mod LEFT_CONTROL J  &homerow_mod LEFT_SHIFT K  &homerow_mod LEFT_ALT L  &homerow_mod DELETE SQT  &kp LS(DOUBLE_QUOTES)
-&kp LSHFT     &kp Z  &kp X  &kp C       &kp V                      &kp B    &kp N  &kp M                        &use_less                  &use_colon               &kp TILDE                &kp QUESTION
+&kp TAB       &kp Q  &kp W  &kp E       &kp R                      &kp T    &kp Y  &kp U                        &kp I                      &kp O                    &kp P                       &kp BSPC
+&kp CAPSLOCK  &kp A  &kp S  &kp D       &kp F                      &kp G    &kp H  &homerow_mod LEFT_CONTROL J  &homerow_mod LEFT_SHIFT K  &homerow_mod LEFT_ALT L  &symbols SQT DOUBLE_QUOTES  &kp TILDE
+&kp LSHFT     &kp Z  &kp X  &kp C       &kp V                      &kp B    &kp N  &kp M                        &use_less                  &use_colon               &kp QUESTION                &kp LEFT_CONTROL
                             &kp ESCAPE  &symbols DELETE BACKSPACE  &to 2    &to 1  &kp SPACE                    &kp LEFT_COMMAND
             >;
         };
