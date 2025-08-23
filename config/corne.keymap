@@ -17,24 +17,31 @@
             key-positions = <33 32>;
         };
 
-        ctrl {
-            bindings = <&mt LEFT_CONTROL A>;
-            key-positions = <13>;
+        colon {
+            bindings = <&mt COLON DOT>;
+            key-positions = <33>;
+        };
+    };
+
+    behaviors {
+        homerow_mod: homerow_mod {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MOD";
+            bindings = <&sk>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
         };
 
-        shift {
-            bindings = <&mt LEFT_SHIFT S>;
-            key-positions = <14>;
-        };
+        symbols: symbols {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SYMBOLS";
+            bindings = <&kp>, <&kp>;
 
-        alt {
-            bindings = <&mt D LEFT_ALT>;
-            key-positions = <15>;
-        };
-
-        super {
-            bindings = <&mt LEFT_WIN F>;
-            key-positions = <16>;
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            flavor = "balanced";
         };
     };
 
@@ -49,25 +56,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB       &kp Q  &kp W  &kp E     &kp R  &kp T         &kp Y       &kp U  &kp I       &kp O    &kp P     &kp BSPC
-&kp CAPSLOCK  &kp A  &kp S  &kp D     &kp F  &kp G         &kp H       &kp J  &kp K       &kp L    &kp SQT   &kp LS(DOUBLE_QUOTES)
-&kp LSHFT     &kp Z  &kp X  &kp C     &kp V  &kp B         &kp N       &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp QUESTION
-                            &kp LGUI  &mo 2  &kp RETURN    &kp RETURN  &mo 1  &kp ESCAPE
-            >;
-        };
-
-        lower_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
-            bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
-                                        &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
+&kp TAB       &kp Q  &kp W  &kp E       &kp R       &kp T    &kp Y  &kp U                        &kp I                      &kp O                    &kp P                    &kp BSPC
+&kp CAPSLOCK  &kp A  &kp S  &kp D       &kp F       &kp G    &kp H  &homerow_mod LEFT_CONTROL J  &homerow_mod LEFT_SHIFT K  &homerow_mod LEFT_ALT L  &homerow_mod DELETE SQT  &kp LS(DOUBLE_QUOTES)
+&kp LSHFT     &kp Z  &kp X  &kp C       &kp V       &kp B    &kp N  &kp M                        &kp COMMA                  &kp DOT                  &kp TILDE                &kp QUESTION
+                            &kp ESCAPE  &kp RETURN  &to 2    &to 1  &kp SPACE                    &kp LEFT_COMMAND
             >;
         };
 
@@ -79,10 +71,25 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+&kp TAB    &symbols EXCLAMATION NUMBER_1  &symbols AT NUMBER_2   &symbols HASH NUMBER_3  &symbols DLLR NUMBER_4  &symbols PRCNT NUMBER_5    &symbols CARET NUMBER_6  &symbols AMPS NUMBER_7  &symbols ASTRK NUMBER_8  &kp NUMBER_9     &kp NUMBER_0  &kp BSPC
+&kp LCTRL  &kp LEFT_PARENTHESIS           &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET        &kp RIGHT_BRACKET       &kp PIPE                   &kp LEFT_ARROW           &kp DOWN_ARROW          &kp UP_ARROW             &kp RIGHT_ARROW  &kp BSLH      &kp GRAVE
+&kp LSHFT  &kp PLUS                       &kp MINUS              &kp ASTERISK            &kp SLASH               &kp EQUAL                  &kp UNDER                &kp HASH                &kp LBRC                 &kp RBRC         &kp DOLLAR    &kp TILDE
+                                                                 &kp LGUI                &kp RET                 &to 0                      &to 2                    &kp SPACE               &kp RALT
+            >;
+        };
+
+        lower_layer {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
+            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+            //                    | GUI |     | SPC |   | ENT |     | ALT |
+
+            bindings = <
+&kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6          &kp F7      &kp F8             &kp F9           &kp F10           &kp F11  &kp F12
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_PLAY_PAUSE  &trans   &trans
+&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans      &trans             &trans           &trans            &trans   &trans
+                                        &kp LGUI      &kp RETURN    &to 1           &to 0       &kp SPACE          &kp RALT
             >;
         };
     };
