@@ -13,13 +13,8 @@
         compatible = "zmk,combos";
 
         semicolon {
-            bindings = <&kp SEMI>;
-            key-positions = <33 32>;
-        };
-
-        colon {
-            bindings = <&mt COLON DOT>;
-            key-positions = <33>;
+            bindings = <&kp SEMICOLON>;
+            key-positions = <32 33>;
         };
     };
 
@@ -44,14 +39,21 @@
             flavor = "balanced";
         };
 
-        switch_layers: switch_layers {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SWITCH_LAYERS";
-            bindings = <&to>, <&kp>;
+        use_colon: use_colon {
+            compatible = "zmk,behavior-tap-dance";
+            label = "USE_COLON";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp COLON>, <&kp GREATER_THAN>;
 
-            #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            flavor = "balanced";
+            tapping-term-ms = <150>;
+        };
+
+        use_less: use_less {
+            compatible = "zmk,behavior-tap-dance";
+            label = "USE_LESS";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp COMMA>, <&kp LESS_THAN>;
         };
     };
 
@@ -66,10 +68,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB       &kp Q  &kp W  &kp E       &kp R       &kp T                         &kp Y                 &kp U                        &kp I                      &kp O                    &kp P                    &kp BSPC
-&kp CAPSLOCK  &kp A  &kp S  &kp D       &kp F       &kp G                         &kp H                 &homerow_mod LEFT_CONTROL J  &homerow_mod LEFT_SHIFT K  &homerow_mod LEFT_ALT L  &homerow_mod DELETE SQT  &kp LS(DOUBLE_QUOTES)
-&kp LSHFT     &kp Z  &kp X  &kp C       &kp V       &kp B                         &kp N                 &kp M                        &kp COMMA                  &kp DOT                  &kp TILDE                &kp QUESTION
-                            &kp ESCAPE  &kp DELETE  &switch_layers 2 BACKSPACE    &switch_layers 1 RET  &kp SPACE                    &kp LEFT_COMMAND
+&kp TAB       &kp Q  &kp W  &kp E       &kp R                      &kp T    &kp Y  &kp U                        &kp I                      &kp O                    &kp P                    &kp BSPC
+&kp CAPSLOCK  &kp A  &kp S  &kp D       &kp F                      &kp G    &kp H  &homerow_mod LEFT_CONTROL J  &homerow_mod LEFT_SHIFT K  &homerow_mod LEFT_ALT L  &homerow_mod DELETE SQT  &kp LS(DOUBLE_QUOTES)
+&kp LSHFT     &kp Z  &kp X  &kp C       &kp V                      &kp B    &kp N  &kp M                        &use_less                  &use_colon               &kp TILDE                &kp QUESTION
+                            &kp ESCAPE  &symbols DELETE BACKSPACE  &to 2    &to 1  &kp SPACE                    &kp LEFT_COMMAND
             >;
         };
 
