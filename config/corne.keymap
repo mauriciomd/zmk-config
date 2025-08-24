@@ -68,10 +68,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB       &kp Q  &kp W  &kp E       &kp R                      &kp T    &kp Y  &kp U                        &kp I                      &kp O                    &kp P                       &kp BSPC
-&kp CAPSLOCK  &kp A  &kp S  &kp D       &kp F                      &kp G    &kp H  &homerow_mod LEFT_CONTROL J  &homerow_mod LEFT_SHIFT K  &homerow_mod LEFT_ALT L  &symbols SQT DOUBLE_QUOTES  &kp TILDE
-&kp LSHFT     &kp Z  &kp X  &kp C       &kp V                      &kp B    &kp N  &kp M                        &use_less                  &use_colon               &kp QUESTION                &kp LEFT_CONTROL
-                            &kp ESCAPE  &symbols DELETE BACKSPACE  &to 2    &to 1  &kp SPACE                    &kp LEFT_COMMAND
+&kp TAB       &kp Q  &kp W  &kp E       &kp R                   &kp T    &kp Y  &kp U                        &kp I                      &kp O                    &kp P                       &kp BACKSPACE
+&kp CAPSLOCK  &kp A  &kp S  &kp D       &kp F                   &kp G    &kp H  &homerow_mod LEFT_CONTROL J  &homerow_mod LEFT_SHIFT K  &homerow_mod LEFT_ALT L  &symbols SQT DOUBLE_QUOTES  &kp TILDE
+&kp LSHFT     &kp Z  &kp X  &kp C       &kp V                   &kp B    &kp N  &kp M                        &use_less                  &use_colon               &kp QUESTION                &kp LEFT_CONTROL
+                            &kp ESCAPE  &symbols DELETE RETURN  &to 2    &to 1  &kp SPACE                    &kp LEFT_COMMAND
             >;
         };
 
@@ -83,10 +83,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &symbols EXCLAMATION NUMBER_1  &symbols AT NUMBER_2   &symbols HASH NUMBER_3  &symbols DLLR NUMBER_4  &symbols PRCNT NUMBER_5    &symbols CARET NUMBER_6  &symbols AMPS NUMBER_7  &symbols ASTRK NUMBER_8  &kp NUMBER_9     &kp NUMBER_0  &kp BSPC
-&kp LCTRL  &kp LEFT_PARENTHESIS           &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET        &kp RIGHT_BRACKET       &kp PIPE                   &kp LEFT_ARROW           &kp DOWN_ARROW          &kp UP_ARROW             &kp RIGHT_ARROW  &kp BSLH      &kp GRAVE
-&kp LSHFT  &kp PLUS                       &kp MINUS              &kp ASTERISK            &kp SLASH               &kp EQUAL                  &kp UNDER                &kp HASH                &kp LBRC                 &kp RBRC         &kp DOLLAR    &kp TILDE
-                                                                 &kp LEFT_SHIFT          &kp RET                 &to 2                      &to 0                    &kp SPACE               &kp LEFT_CONTROL
+&kp TAB       &symbols EXCLAMATION NUMBER_1  &symbols AT NUMBER_2   &symbols HASH NUMBER_3  &symbols DLLR NUMBER_4  &symbols PRCNT NUMBER_5    &symbols CARET NUMBER_6  &symbols AMPS NUMBER_7  &symbols ASTRK NUMBER_8  &kp NUMBER_9     &kp NUMBER_0  &kp BSPC
+&kp LCTRL     &kp LEFT_PARENTHESIS           &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET        &kp RIGHT_BRACKET       &kp PIPE                   &kp LEFT_ARROW           &kp DOWN_ARROW          &kp UP_ARROW             &kp RIGHT_ARROW  &kp BSLH      &kp GRAVE
+&kp LEFT_ALT  &kp PLUS                       &kp MINUS              &kp ASTERISK            &kp SLASH               &kp EQUAL                  &kp UNDER                &kp HASH                &kp LBRC                 &kp RBRC         &kp DOLLAR    &kp TILDE
+                                                                    &kp LEFT_SHIFT          &kp RET                 &to 2                      &to 0                    &kp SPACE               &kp LEFT_CONTROL
             >;
         };
 
