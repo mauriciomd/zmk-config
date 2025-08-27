@@ -27,11 +27,11 @@
         homerow_mod: homerow_mod {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MOD";
-            bindings = <&sk>, <&kp>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
         };
 
         symbols: symbols {
