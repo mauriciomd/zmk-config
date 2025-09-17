@@ -66,10 +66,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB         &kp Q  &kp W                    &kp E                         &kp R                      &kp T                          &kp Y                        &kp U                      &kp I                             &kp O                    &kp P                       &kp BACKSPACE
-&kp LEFT_SHIFT  &kp A  &homerow_mod LEFT_GUI S  &homerow_mod LEFT_ALT D       &homerow_mod LEFT_SHIFT F  &homerow_mod LEFT_CONTROL G    &homerow_mod LEFT_CONTROL H  &homerow_mod LEFT_SHIFT J  &homerow_mod LEFT_ALT K           &homerow_mod LEFT_GUI L  &symbols DOUBLE_QUOTES SQT  &kp SEMICOLON
-&kp LEFT_ALT    &kp Z  &kp X                    &kp C                         &kp V                      &kp B                          &kp N                        &kp M                      &kp COMMA                         &kp DOT                  &symbols QUESTION SLASH     &symbols GRAVE TILDE
-                                                &homerow_mod LEFT_GUI ESCAPE  &kp RETURN                 &momentaneous_layer 1 2        &to 1                        &kp SPACE                  &homerow_mod LEFT_CONTROL DELETE
+&kp LEFT_SHIFT  &kp Q  &kp W                    &kp E                    &kp R                      &kp T                          &kp Y                        &kp U                      &kp I                    &kp O                    &kp P                       &kp GRAVE
+&kp TAB         &kp A  &homerow_mod LEFT_GUI S  &homerow_mod LEFT_ALT D  &homerow_mod LEFT_SHIFT F  &homerow_mod LEFT_CONTROL G    &homerow_mod LEFT_CONTROL H  &homerow_mod LEFT_SHIFT J  &homerow_mod LEFT_ALT K  &homerow_mod LEFT_GUI L  &symbols DOUBLE_QUOTES SQT  &kp COLON
+&kp CAPSLOCK    &kp Z  &kp X                    &kp C                    &kp V                      &kp B                          &kp N                        &kp M                      &kp COMMA                &kp DOT                  &symbols QUESTION SLASH     &kp ESCAPE
+                                                &kp DELETE               &kp RETURN                 &momentaneous_layer 1 2        &to 1                        &kp SPACE                  &kp BACKSPACE
             >;
         };
 
@@ -97,7 +97,7 @@
 
             bindings = <
 &kp F1      &kp F2             &kp F3           &kp F4        &kp F5          &kp F6          &kp F7          &kp F8          &kp F9        &kp F10          &kp F11          &kp F12
-&kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_PP      &kp C_PREVIOUS  &kp C_NEXT      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans           &trans
+&kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_PP      &kp C_PREVIOUS  &kp C_NEXT      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none            &none
 &bt BT_CLR  &bt BT_SEL 0       &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4    &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &kp PRINTSCREEN  &trans
                                                 &kp ESCAPE    &kp RETURN      &to 0           &to 1           &kp SPACE       &trans
             >;
