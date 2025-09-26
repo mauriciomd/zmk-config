@@ -16,11 +16,6 @@
             bindings = <&kp SEMICOLON>;
             key-positions = <32 33>;
         };
-
-        capslock {
-            bindings = <&kp CAPSLOCK>;
-            key-positions = <1 10>;
-        };
     };
 
     behaviors {
