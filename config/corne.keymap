@@ -7,7 +7,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
 
 / {
     combos { compatible = "zmk,combos"; };
@@ -19,7 +18,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
+            flavor = "tap-preferred";
             tapping-term-ms = <300>;
         };
 
@@ -55,7 +54,7 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&to 3         &kp Q  &kp W                    &kp E                    &kp R                      &kp T                          &kp Y                        &kp U                      &kp I                    &kp O                    &kp P                       &kp GRAVE
+&kp C_PP      &kp Q  &kp W                    &kp E                    &kp R                      &kp T                          &kp Y                        &kp U                      &kp I                    &kp O                    &kp P                       &kp GRAVE
 &kp TAB       &kp A  &homerow_mod LEFT_GUI S  &homerow_mod LEFT_ALT D  &homerow_mod LEFT_SHIFT F  &homerow_mod LEFT_CONTROL G    &homerow_mod LEFT_CONTROL H  &homerow_mod LEFT_SHIFT J  &homerow_mod LEFT_ALT K  &homerow_mod LEFT_GUI L  &symbols DOUBLE_QUOTES SQT  &kp SEMI
 &kp CAPSLOCK  &kp Z  &kp X                    &kp C                    &kp V                      &kp B                          &kp N                        &kp M                      &kp COMMA                &kp DOT                  &symbols QUESTION SLASH     &kp ESCAPE
                                               &kp DELETE               &kp RETURN                 &momentaneous_layer 1 2        &to 1                        &kp SPACE                  &kp BACKSPACE
@@ -94,10 +93,10 @@
 
         layer_3 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans          &mkp LCLK       &mkp MCLK     &mkp RCLK        &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans          &msc SCRL_DOWN  &msc SCRL_UP  &trans           &trans  &trans
-                        &trans  &trans  &trans    &to 0           &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
